@@ -1,0 +1,440 @@
+ALURAFLIX
+
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>De Volta à Infância</title>
+  <style>
+    *{box-sizing:border-box;margin:0;padding:0}
+    html,body{height:100%}
+    body{
+      font-family: 'Poppins', system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+      color:#222;
+      -webkit-font-smoothing:antialiased;
+      -moz-osx-font-smoothing:grayscale;
+
+      /* fundo: degradê retrô animado */
+      background: linear-gradient(135deg, #fdf6ec 0%, #f7e8f0 30%, #d9e7f3 60%, #fff7ea 100%);
+      background-size: 300% 300%;
+      animation: bgMove 12s ease infinite;
+      padding-bottom:60px;
+    }
+    @keyframes bgMove { 0%{background-position:0% 50%} 50%{background-position:100% 50%} 100%{background-position:0% 50%} }
+
+    header{ text-align:center; padding:44px 18px 8px }
+    .titulo-wrap{ display:flex; gap:12px; justify-content:center; align-items:center }
+    .titulo-wrap img{ width:56px; height:56px; }
+    h1{
+      font-family: 'Comic Sans MS', cursive;
+      font-size:2.9rem;
+      line-height:1;
+      /* título com gradiente colorido */
+      background: linear-gradient(90deg,#ff7eb9,#ff65a3,#7afcff,#feff9c,#fff740);
+      -webkit-background-clip:text; -webkit-text-fill-color:transparent;
+      filter: drop-shadow(0 2px 6px rgba(0,0,0,0.12));
+    }
+    .sub{ margin-top:8px; font-size:1.02rem; color:#2e2e2e; font-weight:600 }
+
+    main{ max-width:1200px; margin:26px auto; padding:0 16px; }
+
+    section.categoria{ margin:36px 0; }
+    .cat-title{
+      display:inline-block;
+      padding:8px 18px;
+      background: linear-gradient(90deg,#7aa7d9,#d28fb8);
+      color:white; border-radius:24px; font-weight:700; box-shadow:0 8px 22px rgba(0,0,0,0.08);
+      font-size:1.15rem;
+    }
+    .intro{ margin:12px 0 18px; color:#444 }
+
+    .galeria{
+      display:grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px,1fr));
+      gap:18px;
+      align-items:start;
+    }
+
+    .card{
+      background: rgba(255,255,255,0.96);
+      border-radius:12px;
+      overflow:hidden;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+      border: 1px solid rgba(0,0,0,0.05);
+      transition: transform .16s ease, box-shadow .16s ease;
+      min-height: 320px;
+      display:flex;
+      flex-direction:column;
+      justify-content:flex-start;
+    }
+
+    .card:hover{ transform: translateY(-8px); box-shadow: 0 20px 40px rgba(0,0,0,0.14); z-index:2 }
+
+    .thumb{
+      width:100%;
+      height:170px;
+      object-fit:cover;
+      display:block;
+      background:#eee;
+    }
+
+    .conteudo{
+      padding:12px 14px 18px;
+      text-align:center;
+      flex:1;
+      display:flex;
+      flex-direction:column;
+      justify-content:space-between;
+    }
+
+    .nome{ color:#000; font-weight:700; margin-bottom:8px; font-size:1.03rem; }
+    .desc{ color:#444; font-size:0.92rem; min-height:48px; margin-bottom:12px; }
+
+    .acoes{ margin-top:auto; display:flex; justify-content:center; gap:10px; }
+    .btn {
+      display:inline-block; padding:8px 12px; border-radius:10px;
+      background: linear-gradient(90deg,#ff8a80,#ffb86b); color:#fff; font-weight:700; text-decoration:none;
+      box-shadow: 0 6px 14px rgba(255,160,120,0.18);
+    }
+    .btn.secondary{ background: linear-gradient(90deg,#7ad7ff,#6fb3ff); color:#03314f; }
+
+    footer{ max-width:1200px; margin:36px auto 26px; padding:18px 16px; text-align:center; color:#222; font-weight:600; }
+
+    @media (max-width:600px){
+      h1{ font-size:1.9rem } .thumb{ height:140px } .card{ min-height: 300px }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="titulo-wrap">
+      <img src="https://cdn-icons-png.flaticon.com/512/992/992703.png" alt="arco-íris">
+      <h1>De Volta à Infância</h1>
+    </div>
+    <div class="sub">Reviva os clássicos que marcaram gerações!</div>
+  </header>
+
+  <main>
+    <!-- 1) CLÁSSICOS DA TV -->
+    <section class="categoria" aria-label="Clássicos da TV">
+      <div class="cat-title">📺 Clássicos da TV</div>
+      <p class="intro">Os desenhos que marcaram gerações com humor e nostalgia 💛</p>
+
+      <div class="galeria">
+        <!-- Tom e Jerry -->
+        <article class="card">
+          <a href="https://www.youtube.com/watch?v=ZzyWnDDSN_Q" target="_blank" rel="noopener noreferrer">
+            <img class="thumb" src="https://i.ytimg.com/vi/ZzyWnDDSN_Q/hqdefault.jpg" alt="Tom e Jerry">
+          </a>
+          <div class="conteudo">
+            <div>
+              <div class="nome">Tom e Jerry</div>
+              <div class="desc">As travessuras eternas do gato e do rato mais famosos da TV!</div>
+            </div>
+            <div class="acoes">
+              <a class="btn" href="https://www.youtube.com/watch?v=ZzyWnDDSN_Q" target="_blank" rel="noopener noreferrer">Ver abertura</a>
+            </div>
+          </div>
+        </article>
+
+        <!-- Pica-Pau -->
+        <article class="card">
+          <a href="https://www.youtube.com/watch?v=9aLiwM0VIN4" target="_blank" rel="noopener noreferrer">
+            <img class="thumb" src="https://i.ytimg.com/vi/9aLiwM0VIN4/hqdefault.jpg" alt="Pica-Pau">
+          </a>
+          <div class="conteudo">
+            <div>
+              <div class="nome">Pica-Pau</div>
+              <div class="desc">O pássaro travesso que vive confusões e rendeu muitas risadas!</div>
+            </div>
+            <div class="acoes">
+              <a class="btn" href="https://www.youtube.com/watch?v=9aLiwM0VIN4" target="_blank" rel="noopener noreferrer">Ver abertura</a>
+            </div>
+          </div>
+        </article>
+
+        <!-- Looney Tunes -->
+        <article class="card">
+          <a href="https://www.youtube.com/watch?v=H4jEX5mCWZc" target="_blank" rel="noopener noreferrer">
+            <img class="thumb" src="https://i.ytimg.com/vi/H4jEX5mCWZc/hqdefault.jpg" alt="Looney Tunes">
+          </a>
+          <div class="conteudo">
+            <div>
+              <div class="nome">Looney Tunes</div>
+              <div class="desc">Pernalonga, Patolino e companhia em aventuras insanas!</div>
+            </div>
+            <div class="acoes">
+              <a class="btn" href="https://www.youtube.com/watch?v=H4jEX5mCWZc" target="_blank" rel="noopener noreferrer">Ver abertura</a>
+            </div>
+          </div>
+        </article>
+
+        <!-- Pantera Cor-de-Rosa -->
+        <article class="card">
+          <a href="https://www.youtube.com/watch?v=3_KkEi_PHv4" target="_blank" rel="noopener noreferrer">
+            <img class="thumb" src="https://i.ytimg.com/vi/3_KkEi_PHv4/hqdefault.jpg" alt="Pantera Cor-de-Rosa">
+          </a>
+          <div class="conteudo">
+            <div>
+              <div class="nome">Pantera Cor-de-Rosa</div>
+              <div class="desc">Elegância e humor com o felino cor-de-rosa favorito!</div>
+            </div>
+            <div class="acoes">
+              <a class="btn" href="https://www.youtube.com/watch?v=3_KkEi_PHv4" target="_blank" rel="noopener noreferrer">Ver abertura</a>
+            </div>
+          </div>
+        </article>
+
+        <!-- A Corrida Maluca -->
+        <article class="card">
+          <a href="https://www.youtube.com/watch?v=j35ejjHDBN4" target="_blank" rel="noopener noreferrer">
+            <img class="thumb" src="https://i.ytimg.com/vi/j35ejjHDBN4/hqdefault.jpg" alt="A Corrida Maluca">
+          </a>
+          <div class="conteudo">
+            <div>
+              <div class="nome">A Corrida Maluca</div>
+              <div class="desc">Carros malucos e corridas com muita trapalhada e diversão!</div>
+            </div>
+            <div class="acoes">
+              <a class="btn" href="https://www.youtube.com/watch?v=j35ejjHDBN4" target="_blank" rel="noopener noreferrer">Ver abertura</a>
+            </div>
+          </div>
+        </article>
+
+        <!-- Bob Esponja -->
+        <article class="card">
+          <a href="https://www.youtube.com/watch?v=aHvFnTg1ecs" target="_blank" rel="noopener noreferrer">
+            <img class="thumb" src="https://i.ytimg.com/vi/aHvFnTg1ecs/hqdefault.jpg" alt="Bob Esponja">
+          </a>
+          <div class="conteudo">
+            <div>
+              <div class="nome">Bob Esponja</div>
+              <div class="desc">Bob Esponja e suas aventuras malucas na Fenda do Biquíni!</div>
+            </div>
+            <div class="acoes"><a class="btn" href="https://www.youtube.com/watch?v=aHvFnTg1ecs" target="_blank" rel="noopener noreferrer">Ver abertura</a></div>
+          </div>
+        </article>
+
+        <!-- Riquinho -->
+        <article class="card">
+          <a href="https://www.youtube.com/watch?v=EoYuSKqdhUk" target="_blank" rel="noopener noreferrer">
+            <img class="thumb" src="https://i.ytimg.com/vi/EoYuSKqdhUk/hqdefault.jpg" alt="Riquinho">
+          </a>
+          <div class="conteudo">
+            <div>
+              <div class="nome">Riquinho</div>
+              <div class="desc">Richie Rich e suas aventuras luxuosas e bem-humoradas!</div>
+            </div>
+            <div class="acoes"><a class="btn" href="https://www.youtube.com/watch?v=EoYuSKqdhUk" target="_blank" rel="noopener noreferrer">Ver abertura</a></div>
+          </div>
+        </article>
+
+        <!-- Masha e o Urso -->
+        <article class="card">
+          <a href="https://www.youtube.com/watch?v=rrZbM0485VA" target="_blank" rel="noopener noreferrer">
+            <img class="thumb" src="https://i.ytimg.com/vi/rrZbM0485VA/hqdefault.jpg" alt="Masha e o Urso">
+          </a>
+          <div class="conteudo">
+            <div>
+              <div class="nome">Masha e o Urso</div>
+              <div class="desc">Masha e seu amigo Urso em aventuras fofas e engraçadas!</div>
+            </div>
+            <div class="acoes"><a class="btn" href="https://www.youtube.com/watch?v=rrZbM0485VA" target="_blank" rel="noopener noreferrer">Ver abertura</a></div>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- 2) ⚡🦸🏻AÇÃO E HERÓIS -->
+    <section class="categoria">
+      <div class="cat-title"> ⚡🦸🏻Ação e Heróis</div>
+      <p class="intro">Heróis, poderes e muita adrenalina em cada episódio 💥</p>
+
+      <div class="galeria">
+        <!-- Super Choque -->
+        <article class="card">
+          <a href="https://www.youtube.com/watch?v=EZByB9J5JTs" target="_blank" rel="noopener noreferrer">
+            <img class="thumb" src="https://i.ytimg.com/vi/EZByB9J5JTs/hqdefault.jpg" alt="Super Choque">
+          </a>
+          <div class="conteudo">
+            <div><div class="nome">Super Choque</div><div class="desc">Um jovem herói elétrico protegendo sua cidade!</div></div>
+            <div class="acoes"><a class="btn" href="https://www.youtube.com/watch?v=EZByB9J5JTs" target="_blank" rel="noopener noreferrer">Ver abertura</a></div>
+          </div>
+        </article>
+
+        <!-- X-Men -->
+        <article class="card">
+          <a href="https://www.youtube.com/watch?v=JhTEaoMJvX0" target="_blank" rel="noopener noreferrer">
+            <img class="thumb" src="https://i.ytimg.com/vi/JhTEaoMJvX0/hqdefault.jpg" alt="X-Men">
+          </a>
+          <div class="conteudo">
+            <div><div class="nome">X-Men</div><div class="desc">Mutantes com poderes incríveis que lutam pela coexistência!</div></div>
+            <div class="acoes"><a class="btn" href="https://www.youtube.com/watch?v=JhTEaoMJvX0" target="_blank" rel="noopener noreferrer">Ver abertura</a></div>
+          </div>
+        </article>
+
+        <!-- Liga da Justiça -->
+        <article class="card">
+          <a href="https://www.youtube.com/watch?v=eCq7xlptkuU" target="_blank" rel="noopener noreferrer">
+            <img class="thumb" src="https://i.ytimg.com/vi/eCq7xlptkuU/hqdefault.jpg" alt="Liga da Justiça">
+          </a>
+          <div class="conteudo">
+            <div><div class="nome">Liga da Justiça</div><div class="desc">Os maiores heróis do planeta unidos para proteger o mundo!</div></div>
+            <div class="acoes"><a class="btn" href="https://www.youtube.com/watch?v=eCq7xlptkuU" target="_blank" rel="noopener noreferrer">Ver abertura</a></div>
+          </div>
+        </article>
+
+        <!-- Homem-Aranha -->
+        <article class="card">
+          <a href="https://www.youtube.com/watch?v=PZrTsx5S37k" target="_blank" rel="noopener noreferrer">
+            <img class="thumb" src="https://i.ytimg.com/vi/PZrTsx5S37k/hqdefault.jpg" alt="Homem-Aranha">
+          </a>
+          <div class="conteudo">
+            <div><div class="nome">Homem-Aranha</div><div class="desc">Com grandes poderes, vêm grandes responsabilidades!</div></div>
+            <div class="acoes"><a class="btn" href="https://www.youtube.com/watch?v=PZrTsx5S37k" target="_blank" rel="noopener noreferrer">Ver abertura</a></div>
+          </div>
+        </article>
+
+        <!-- Ben 10 -->
+        <article class="card">
+          <a href="https://www.youtube.com/watch?v=NDNyZ4dIP54" target="_blank" rel="noopener noreferrer">
+            <img class="thumb" src="https://i.ytimg.com/vi/NDNyZ4dIP54/hqdefault.jpg" alt="Ben 10">
+          </a>
+          <div class="conteudo">
+            <div><div class="nome">Ben 10</div><div class="desc">Um garoto que se transforma em heróis alienígenas graças ao Omnitrix!</div></div>
+            <div class="acoes"><a class="btn" href="https://www.youtube.com/watch?v=NDNyZ4dIP54" target="_blank" rel="noopener noreferrer">Ver abertura</a></div>
+          </div>
+        </article>
+
+        <!-- Tartarugas Ninjas -->
+        <article class="card">
+          <a href="https://www.youtube.com/watch?v=LNXDORibqkE" target="_blank" rel="noopener noreferrer">
+            <img class="thumb" src="https://i.ytimg.com/vi/LNXDORibqkE/hqdefault.jpg" alt="Tartarugas Ninjas">
+          </a>
+          <div class="conteudo">
+            <div><div class="nome">As Tartarugas Ninjas</div><div class="desc">Quatro irmãos ninjas enfrentando o crime em Nova York!</div></div>
+            <div class="acoes"><a class="btn" href="https://www.youtube.com/watch?v=LNXDORibqkE" target="_blank" rel="noopener noreferrer">Ver abertura</a></div>
+          </div>
+        </article>
+
+        <!-- Jovens Titãs -->
+        <article class="card">
+          <a href="https://www.youtube.com/watch?v=V2Gao4o_Y3g" target="_blank" rel="noopener noreferrer">
+            <img class="thumb" src="https://i.ytimg.com/vi/V2Gao4o_Y3g/hqdefault.jpg" alt="Jovens Titãs em Ação">
+          </a>
+          <div class="conteudo">
+            <div><div class="nome">Jovens Titãs em Ação</div><div class="desc">Heróis adolescentes salvando o dia com muito humor e energia!</div></div>
+            <div class="acoes"><a class="btn" href="https://www.youtube.com/watch?v=V2Gao4o_Y3g" target="_blank" rel="noopener noreferrer">Ver abertura</a></div>
+          </div>
+        </article>
+
+        <!-- Três Espiãs Demais -->
+        <article class="card">
+          <a href="https://www.youtube.com/watch?v=gHYUUP7MaDs" target="_blank" rel="noopener noreferrer">
+            <img class="thumb" src="https://i.ytimg.com/vi/gHYUUP7MaDs/hqdefault.jpg" alt="Três Espiãs Demais">
+          </a>
+          <div class="conteudo">
+            <div><div class="nome">Três Espiãs Demais</div><div class="desc">Três adolescentes-espiãs em missões cheias de ação e estilo!</div></div>
+            <div class="acoes"><a class="btn" href="https://www.youtube.com/watch?v=gHYUUP7MaDs" target="_blank" rel="noopener noreferrer">Ver abertura</a></div>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- 3) MISTÉRIO E AVENTURA -->
+    <section class="categoria">
+      <div class="cat-title">🔍🕵🏻‍♀️ Mistério e Aventura</div>
+      <p class="intro">Investigações, confusões e aventuras cheias de humor 🔍🕵🏻‍♀️</p>
+
+      <div class="galeria">
+        <!-- Scooby-Doo -->
+        <article class="card">
+          <a href="https://www.youtube.com/watch?v=O5OXEnk-7bU" target="_blank" rel="noopener noreferrer">
+            <img class="thumb" src="https://i.ytimg.com/vi/O5OXEnk-7bU/hqdefault.jpg" alt="Scooby-Doo">
+          </a>
+          <div class="conteudo">
+            <div><div class="nome">Scooby-Doo</div><div class="desc">Scooby e a turma desvendando mistérios assustadores com humor!</div></div>
+            <div class="acoes"><a class="btn" href="https://www.youtube.com/watch?v=O5OXEnk-7bU" target="_blank" rel="noopener noreferrer">Ver abertura</a></div>
+          </div>
+        </article>
+
+        <!-- Os Jetsons -->
+        <article class="card">
+          <a href="https://www.youtube.com/watch?v=oxC8ZbEVzLQ" target="_blank" rel="noopener noreferrer">
+            <img class="thumb" src="https://i.ytimg.com/vi/oxC8ZbEVzLQ/hqdefault.jpg" alt="Os Jetsons">
+          </a>
+          <div class="conteudo">
+            <div><div class="nome">Os Jetsons</div><div class="desc">Uma família futurista com aventuras tecnológicas e muito humor!</div></div>
+            <div class="acoes"><a class="btn" href="https://www.youtube.com/watch?v=oxC8ZbEVzLQ" target="_blank" rel="noopener noreferrer">Ver abertura</a></div>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- 4)🧚🏼‍♀️ MAGIA E FANTASIA -->
+    <section class="categoria">
+      <div class="cat-title">🧚🏼‍♀️Magia e Fantasia</div>
+      <p class="intro">Mundos encantados e personagens que marcaram a infância 💖</p>
+
+      <div class="galeria">
+        <!-- Monster High -->
+        <article class="card">
+          <a href="https://www.youtube.com/watch?v=XDfQWHyRAvE" target="_blank" rel="noopener noreferrer">
+            <img class="thumb" src="https://i.ytimg.com/vi/XDfQWHyRAvE/hqdefault.jpg" alt="Monster High">
+          </a>
+          <div class="conteudo">
+            <div><div class="nome">Monster High</div><div class="desc">Filhos de monstros vivendo amizade, moda e muita aventura!</div></div>
+            <div class="acoes"><a class="btn" href="https://www.youtube.com/watch?v=XDfQWHyRAvE" target="_blank" rel="noopener noreferrer">Ver abertura</a></div>
+          </div>
+        </article>
+
+        <!-- Ever After High -->
+        <article class="card">
+          <a href="https://www.youtube.com/watch?v=9louBJEXnFo" target="_blank" rel="noopener noreferrer">
+            <img class="thumb" src="https://i.ytimg.com/vi/9louBJEXnFo/hqdefault.jpg" alt="Ever After High">
+          </a>
+          <div class="conteudo">
+            <div><div class="nome">Ever After High</div><div class="desc">Os filhos dos contos de fadas escrevendo seus próprios destinos.</div></div>
+            <div class="acoes"><a class="btn" href="https://www.youtube.com/watch?v=9louBJEXnFo" target="_blank" rel="noopener noreferrer">Ver abertura</a></div>
+          </div>
+        </article>
+
+        <!-- Princesinha Sofia -->
+        <article class="card">
+          <a href="https://www.youtube.com/watch?v=4EqqZLscxy8" target="_blank" rel="noopener noreferrer">
+            <img class="thumb" src="https://i.ytimg.com/vi/4EqqZLscxy8/hqdefault.jpg" alt="Princesinha Sofia">
+          </a>
+          <div class="conteudo">
+            <div><div class="nome">Princesinha Sofia</div><div class="desc">Sofia aprende coragem, amizade e o que é ser princesa!</div></div>
+            <div class="acoes"><a class="btn" href="https://www.youtube.com/watch?v=4EqqZLscxy8" target="_blank" rel="noopener noreferrer">Ver abertura</a></div>
+          </div>
+        </article>
+
+        <!-- Os Padrinhos Mágicos -->
+        <article class="card">
+          <a href="https://www.youtube.com/watch?v=eA3x2Deld3o" target="_blank" rel="noopener noreferrer">
+            <img class="thumb" src="https://i.ytimg.com/vi/eA3x2Deld3o/hqdefault.jpg" alt="Os Padrinhos Mágicos">
+          </a>
+          <div class="conteudo">
+            <div><div class="nome">Os Padrinhos Mágicos</div><div class="desc">Timmy e seus padrinhos causam desejos atrapalhados e risadas!</div></div>
+            <div class="acoes"><a class="btn" href="https://www.youtube.com/watch?v=eA3x2Deld3o" target="_blank" rel="noopener noreferrer">Ver abertura</a></div>
+          </div>
+        </article>
+      </div>
+    </section>
+
+  </main>
+
+  <footer>
+    ✨Projeto Aluraflix desenvolvido por Nadyele Ferreira - SEDUC✨
+  </footer>
+
+  <script>
+    // rápido: evita comportamento estranho do botão Info (caso exista)
+    document.querySelectorAll('.btn.secondary').forEach(b=>b.addEventListener('click',e=>e.preventDefault()));
+  </script>
+</body>
+</html>
